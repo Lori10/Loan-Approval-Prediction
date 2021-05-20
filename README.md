@@ -54,7 +54,7 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 
 * Object oriented programming is used to build this project in order to create modular and flexible code.
 * A retraining approach is implemented using Flask framework.
-* Using Logging every information about data cleaning und model training is stored is some txt files and csv files for example : the amount of missing values for each feature, the amount of records removed after dropping the missing values, best selected features, model accuracies and errors etc.
+* Using Logging every information about data cleaning und model training HISTORY (since we may train the model many times using retraining approach) is stored is some txt files and csv files for example : the amount of missing values for each feature, the amount of records removed after dropping the missing values, best selected features, model accuracies and errors etc.
 
 ## Demo
 
