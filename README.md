@@ -44,7 +44,7 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 ## Model Building and Tuning
 
 * The approaches I used to handle imbalanced data are : 1. Tuning XGBoost setting scale_pos_weight attribute = nr of negative instances / nr of positive instances; 2. Tuning Random Forest including class_weight attribute; 3. Using the combination of over- and undersampling with SMOTETomek; 4. Tuning EasyEnsembleClassifier
-* Evaluated the models using AUC Score and confusion matrix. The performance metric used to select the best model is AUC Score.
+* Evaluated the models using AUC Score and confusion matrix because of the imbalanced data. The performance metric used to select the best model is AUC Score.
 * When tuning the models using Cross Validation, I used sklearn pipeline including over-undersampling and hyperparameter tuning in order to avoid data leakage. This means that each fold of Cross Validation is resampled, trained using training set and then tested on test set which is not resampled.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
