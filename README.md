@@ -120,6 +120,6 @@ If you find a bug (the website couldn't handle the query and / or gave undesired
 
 ## Future Scope
 
-* Use other ML Estimators
+* Use any other approach to handle imbalanced data
 * Try other feature engineering approaches to get a possible higher model performance
 * Optimize Flask app.py Front End
