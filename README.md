@@ -43,9 +43,9 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 
 ## Model Building and Tuning
 
-* The ML Estimators I trained are : Linear Regression, Random Forest and KNN.
-* Evaluated the models using R Squared, Adjusted R Squared, Mean Absolute Error, Mean Squared Error, Root Mean Squared Error. The performance metric used to select the best model is Adjusted R Squared.
-* When tuning the model using Cross Validation, I used sklearn pipeline including feature selection, feature scaling and hyperparameter tuning in order to avoid data leakage. So I tuned the nr of features and different hyperparameters in each fold of cross validation.
+* The approaches I used to handle imbalanced data are : 1. Tuning XGBoost setting scale_pos_weight attribute = nr of negative instances / nr of positive instances; 2. Tuning Random Forest including class_weight attribute; 3. Using the combination of over- and undersampling with SMOTETomek; 4. Tuning EasyEnsembleClassifier
+* Evaluated the models using AUC Score and confusion matrix. The performance metric used to select the best model is AUC Score.
+* When tuning the models using Cross Validation, I used sklearn pipeline including over-undersampling and hyperparameter tuning in order to avoid data leakage. This means that each fold of Cross Validation is resampled, trained using training set and then tested on test set which is not resampled.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in a csv file.
@@ -54,7 +54,7 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 
 * Object oriented programming is used to build this project in order to create modular and flexible code.
 * A retraining approach is implemented using Flask framework.
-* Using Logging every information about data cleaning und model training is stored is some txt files and csv files for example : the amount of missing values for each feature, the amount of records removed after dropping the missing values and outliers, the amount of at least frequent categories labeled with 'other' during encoding, the dropped constant features, highly correlated independent features, which features are dropping during handling multicolleniarity, best selected features, model accuracies and errors etc.
+* Using Logging every information about data cleaning und model training is stored is some txt files and csv files for example : the amount of missing values for each feature, the amount of records removed after dropping the missing values, best selected features, model accuracies and errors etc.
 
 ## Demo
 
