@@ -31,21 +31,14 @@ Dataset is imbalanced (81%-19%)
 
 
 ## Data Cleaning
-In order
+The interesting part of this project is that the dataset is highly imbalanced. To prepare the data for training I have performed these feature engineering steps :
 
-* Based on domain knowledge I removed columns which are not relevant for prediction.
-* Removed the missing values in columns where the percentage of missing values was very small while in other columns I labeled them with the string 'Missing'.
-* Categorical features with only few different categories are encoded using one-hot encoding technique while for features with huge amount of categories are considered only the top 20 most frequent categories. The other ones are labeled with 'other' are then one-hot encoding is applied to encode them into numerical features.
-* Some features like number of bedrooms have object datatype so I converted them into float numbers.
-* Total_sqft feature which shows the total square foot of a house is measured in different units like Sq. Yards, Sq. Meter, Acres, Guntha, Cents and have different datatypes like float, integer, string etc. All this values are converted into float number and the same unit which is square foot.
-* Outlier Removal 1: Business manager (who has expertise in real estate), told me that the minimal square ft per bedroom is 300 (i.e. 2 bhk apartment is minimum 600 sqft. So based on business logic I removed all houses where sqft per 1 bedroom is less then 300.
-* Outlier Removal 2: Based on business logic I removed all houses where price per sqft per location is greater than mean + 1 std and less than mean - 1 std.
-* Outlier Removal 3: Based on business logic I removed all houses where total price of x+1 BHK is greater than prices of houses with x BHK for same total sqft.
-* Outlier Removal 4: Based on business logic I removed all houses where nr of bathrooms is greater than 2 + nr of bedroom.
-* Since one of the ML estimators I trained is Linear Regression, I applied some Gaussian transformation techniques on some features to convert them into normally distributed features.
-* Features with variance=0 (constant features) are dropped since they do not give any useful information about the target variable.
-* Since one of the ML estimators I trained is Linear Regression I handled multicolleniarity by dropping independent features (redundant features) that are highly correlated with each other.
-* Feature Selection and Feature Scaling is performed together with the hyperparameter tuning using sklearn pipelines in order to avoid data leakage.
+* Split data into training and test before any data preprocessing approach in order to avoid data leakage. 
+* Remove columns that are not relevant for prediction like Row ID.
+* Removed some unwanted / strange values like 'NONE' and 'ANY' in column Home_Ownership.
+* Dropped records with missing values since the percentage of missing values in features is very low.
+* Used One-Hot encoding technique te encode nominal categorical features with low amount of categories. For features with high amount of categories like 'State' I used mean encoding approach.
+* Feature Selection is done using Recursive Elemination with Cross Validation. Using this approach best features for prediction will be selected automatically.
 
 
 ## Model Building and Tuning
