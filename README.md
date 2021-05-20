@@ -1,4 +1,4 @@
-# Bengaluru House Price Prediction
+# Loan Approval Prediction
 
 ## Table of Content
   * [Business Problem Statement](#Business-Problem-Statement)
@@ -15,11 +15,12 @@
 
 
 ## Business Problem Statement
-Buying a home, especially in a city like Bengaluru, is a tricky choice. While the major factors are usually the same for all metros, there are others to be considered for the Silicon Valley of India. With its help millennial crowd, vibrant culture, great climate and a slew of job opportunities, it is difficult to ascertain the price of a house in Bengaluru. As a result, this projects consists of predicting the house prices in Bengaluru, India using a dataset of more than 10000 records.
-## Data
-Data Source : Kaggle.
+With the enhancement in the banking sector lots of people are applying for bank loans but the bank has its limited assets which it has to grant to limited people only, so finding out to whom the loan can be granted which will be a safer option for the bank is a typical process. The main objective of this project is to predict whether assigning the loan to particular person will be safe or not using a dataset of more than 100000 records.
 
-Link : https://www.kaggle.com/amitabhajoy/bengaluru-house-price-data
+## Data
+Data Source : Private Data Source
+
+Dataset is imbalanced (81%-19%)
 
 ## Used Libraries and Resources
 **Python Version** : 3.6
@@ -30,7 +31,7 @@ Link : https://www.kaggle.com/amitabhajoy/bengaluru-house-price-data
 
 
 ## Data Cleaning
-The interesting thing of this project is that the data is really dirty and has many outliers. So it needs to do a lot of feature engineering to prepare for a machine learning model. I made the following changes :
+In order
 
 * Based on domain knowledge I removed columns which are not relevant for prediction.
 * Removed the missing values in columns where the percentage of missing values was very small while in other columns I labeled them with the string 'Missing'.
