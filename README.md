@@ -45,15 +45,23 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 
 * The approaches I used to handle imbalanced data are : 1. Tuning XGBoost setting scale_pos_weight attribute = nr of negative instances / nr of positive instances; 2. Tuning Random Forest including class_weight attribute; 3. Using the combination of over- and undersampling with SMOTETomek; 4. Tuning EasyEnsembleClassifier
 * Evaluated the models using AUC Score and confusion matrix because of the imbalanced data. The performance metric used to select the best model is AUC Score.
-* When tuning the models using Cross Validation, I used sklearn pipeline including over-undersampling and hyperparameter tuning in order to avoid data leakage. This means that each fold of Cross Validation is resampled, trained using training set and then tested on test set which is not resampled.
+* When tuning the models using Cross Validation, I used sklearn pipeline including over-undersampling and hyperparameter tuning in order to avoid data leakage. This means that each fold of Cross Validation is resampled, model is trained using training set and then tested on test set which is not resampled.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in a csv file.
 
+
+| Model Name        | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
+|:-----------------:|:------------------------:|:---------------------------:|:----------------------:|:----------------------:|:--------------------------:|:---------------------:|
+|Linear Regression  |     0.7891               |     0.7833                  |         0.7800         |      0.7891            |           0.7833           |     0.7800             |
+|Random Forest      |     0.8794               |     0.9700                  |         0.8758         |      0.8793            |           0.7833           |     0.8792            |
+|KNN                |     0.8514               |     0.8861                  |         0.8105         |      0.8504            |           0.9824           |  0.8248              |
+
 ## Other Used Techniques
 
 * Object oriented programming is used to build this project in order to create modular and flexible code.
-* A retraining approach is implemented using Flask framework.
+* Built a client facing API (web application) using Flask.
+* A retraining approach is implemented using Flask.
 * Using Logging every information about data cleaning und model training HISTORY (since we may train the model many times using retraining approach) is stored is some txt files and csv files for example : the amount of missing values for each feature, the amount of records removed after dropping the missing values, best selected features, model accuracies and errors etc.
 
 ## Demo
