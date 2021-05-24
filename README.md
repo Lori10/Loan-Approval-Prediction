@@ -50,6 +50,7 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in a csv file.
 * In Cross Validation Scores we expect higher accuracy than in test score because there is some data leakage during feature engineering.
+* It seems like using SMOTETomek does not give good results in this case. Test score is improved after tuning XGBoost with scale_pos_weight and RandomForest with class_weight. EasyEnsembleClassifier gives similar performance after tuning. The best model that I got after tuning is XGBoost with scale_pos_weight.
 
 
 | Model Name                    | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
