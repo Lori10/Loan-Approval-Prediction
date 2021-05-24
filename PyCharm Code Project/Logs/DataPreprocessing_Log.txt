@@ -1,0 +1,44 @@
+2021-05-23/15:02:44		Start Preprocessing and Training
+2021-05-23/15:02:44		Entered the function get_data of class Data_Getter.
+2021-05-23/15:02:44		Function get_data of class Data_Getter Completed Successfully. Exited this function
+2021-05-23/15:02:44		Entered the function separate_features_label of class Preprocessor.
+2021-05-23/15:02:44		Function separate_features_label of class Preprocessor Completed Succesfully. Exited this function.
+2021-05-23/15:02:44		Entered the function train_test_splitting of Preprocessor class.
+2021-05-23/15:02:45		Function train_test_splitting of Preprocessor class Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered the function remove_columns of the Preprocessor class
+2021-05-23/15:02:45		Function remove_columns of class Preprocessor Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered the function remove_columns of the Preprocessor class
+2021-05-23/15:02:45		Function remove_columns of class Preprocessor Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered function handling_unwanted_values of Preprocessor class.
+2021-05-23/15:02:45		Function handling_unwanted_values of Preprocessor class Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered function handling_unwanted_values of Preprocessor class.
+2021-05-23/15:02:45		Function handling_unwanted_values of Preprocessor class Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered function check_for_missing_values of Preprocessor class.
+2021-05-23/15:02:45		Function check_for_missing_values of Preprocessor class Completed Successfully. Exited this function.
+2021-05-23/15:02:45		Entered the function drop_missing_values of Preprocessor class.
+2021-05-23/15:02:45		Function drop_missing_values of Preprocessor class Completed Succesfully. Exited this function.
+2021-05-23/15:02:45		Entered the function drop_missing_values of Preprocessor class.
+2021-05-23/15:02:45		Function drop_missing_values of Preprocessor class Completed Succesfully. Exited this function.
+2021-05-23/15:02:45		Entered function encode_categorical_features of Preprocessor class.
+2021-05-23/15:02:45		Function encode_categorical_features of Preprocessor class Completed Succesfully. Exited this function
+2021-05-23/15:02:45		Entered the function separate_features_label of class Preprocessor.
+2021-05-23/15:02:45		Function separate_features_label of class Preprocessor Completed Succesfully. Exited this function.
+2021-05-23/15:02:45		Entered the function separate_features_label of class Preprocessor.
+2021-05-23/15:02:45		Function separate_features_label of class Preprocessor Completed Succesfully. Exited this function.
+2021-05-23/15:02:45		Entered function feature_selection_recursive_elemination_cv.
+2021-05-23/15:09:22		31 out of total 32
+2021-05-23/15:09:22		Features selected : Index(['Loan_Amount', 'Term', 'Interest_Rate', 'Employment_Years',
+       'Annual_Income', 'State', 'Debt_to_Income', 'Delinquent_2yr',
+       'Revolving_Cr_Util', 'Total_Accounts', 'Longest_Credit_Length',
+       'Home_Ownership_MORTGAGE', 'Home_Ownership_OWN', 'Home_Ownership_RENT',
+       'Verification_Status_VERIFIED - income',
+       'Verification_Status_VERIFIED - income source',
+       'Verification_Status_not verified', 'Loan_Purpose_car',
+       'Loan_Purpose_credit_card', 'Loan_Purpose_debt_consolidation',
+       'Loan_Purpose_educational', 'Loan_Purpose_home_improvement',
+       'Loan_Purpose_house', 'Loan_Purpose_major_purchase',
+       'Loan_Purpose_medical', 'Loan_Purpose_moving', 'Loan_Purpose_other',
+       'Loan_Purpose_renewable_energy', 'Loan_Purpose_small_business',
+       'Loan_Purpose_vacation', 'Loan_Purpose_wedding'],
+      dtype='object')
+2021-05-23/15:09:22		Function feature_selection_recursive_elemination_cv Completed Successfully. Exited this function.

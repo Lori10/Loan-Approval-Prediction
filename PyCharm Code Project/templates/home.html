@@ -1,0 +1,331 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">LOAN APPROVAL PREDICTION</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Loan Amount</h5>
+                            <!-- LOAN AMOUNT -->
+                            <input type="number" step='0.01' name="loan_amount" id="loan_amount" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Interest Rate</h5>
+                            <!-- INTEREST RATE -->
+                            <input type="number" step='0.01' name="interest_rate" id="interest_rate" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Employment Years</h5>
+                            <!-- Employment Years -->
+                            <input type="number" step='0.1' name="employment_years" id="employment_years" required="required">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Home Ownership -->
+                            <h5 class="card-title">Home Ownership</h5>
+                            <select name="home_ownership" id="home_ownership" required="required">
+                                <option value="RENT">RENT</option>
+                                <option value="OWN">OWN</option>
+                                <option value="MORTGAGE">MORTGAGE</option>
+                                <option value="OTHER">OTHER</option>
+                                <option value="NONE">NONE</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Income</h5>
+                            <!-- Annual Income -->
+                            <input type="number" step='0.1' name="annual_income" id="annual_income" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Verification Status -->
+                            <h5 class="card-title">Verification Status</h5>
+                            <select name="verification_status" id="verification_status" required="required">
+                                <option value="VERIFIED - income">VERIFIED - income</option>
+                                <option value="VERIFIED - income source">VERIFIED - income source</option>
+                                <option value="not verified">not verified</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Loan Purpose -->
+                            <h5 class="card-title">Loan Purpose</h5>
+                            <select name="loan_purpose" id="loan_purpose" required="required">
+                                <option value="credit_card">credit_card</option>
+                                <option value="car">car</option>
+                                <option value="small_business">small_business</option>
+                                <option value="wedding">wedding</option>
+                                <option value="medical">medical</option>
+                                <option value="moving">moving</option>
+                                <option value="vacation">vacation</option>
+                                <option value="house">house</option>
+                                <option value="renewable_energy">renewable_energy</option>
+                                <option value="educational">educational</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">State</h5>
+                            <!-- State -->
+                            <select name="state" id="state" required="required">
+                                <option value='AZ'>AZ</option>
+                                <option value='GA'>GA</option>
+                                <option value='IL'>IL</option>
+                                <option value='CA'>CA</option>
+                                <option value='TX'>TX</option>
+                                <option value='VA'>VA</option>
+                                <option value='MO'>MO</option>
+                                <option value='CT'>CT</option>
+                                <option value='UT'>UT</option>
+                                <option value='FL'>FL</option>
+                                <option value='NY'>NY</option>
+                                <option value='PA'>PA</option>
+                                <option value='MN'>MN</option>
+                                <option value='NJ'>NJ</option>
+                                <option value='OR'>OR</option>
+                                <option value='KY'>KY</option>
+                                <option value='OH'>OH</option>
+                                <option value='SC'>SC</option>
+                                <option value='RI'>RI</option>
+                                <option value='LA'>LA</option>
+                                <option value='MA'>MA</option>
+                                <option value='WA'>WA</option>
+                                <option value='WI'>WI</option>
+                                <option value='AL'>AL</option>
+                                <option value='NV'>NV</option>
+                                <option value='CO'>CO</option>
+                                <option value='MD'>MD</option>
+                                <option value='WV'>WV</option>
+                                <option value='VT'>VT</option>
+                                <option value='MI'>MI</option>
+                                <option value='DC'>DC</option>
+                                <option value='SD'>SD</option>
+                                <option value='NC'>NC</option>
+                                <option value='AR'>AR</option>
+                                <option value='KS'>KS</option>
+                                <option value='NM'>NM</option>
+                                <option value='HI'>HI</option>
+                                <option value='AK'>AK</option>
+                                <option value='OK'>OK</option>
+                                <option value='MT'>MT</option>
+                                <option value='WY'>WY</option>
+                                <option value='NH'>NH</option>
+                                <option value='DE'>DE</option>
+                                <option value='MS'>MS</option>
+                                <option value='TN'>TN</option>
+                                <option value='IA'>IA</option>
+                                <option value='NE'>NE</option>
+                                <option value='ID'>ID</option>
+                                <option value='IN'>IN</option>
+                                <option value='ME'>ME</option>
+                                <option value='nan'>nan</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Debt_to_Income -->
+                            <h5 class="card-title">Debt_to_Income</h5>
+                            <input type="number" step='0.01' name="debt_to_income" id="debt_to_income" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Delinquent_2yr</h5>
+                            <!-- Delinquent_2yr -->
+                            <input type="number" step='0.01' name="delinquent_2yr", id="delinquent_2yr" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Revolving_Cr_Util</h5>
+                            <!-- Revolving_Cr_Util -->
+                            <input type="number" step='0.01' name="revolving_cr_util" id="revolving_cr_util" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total_Accounts</h5>
+                            <!-- Total_Accounts -->
+                            <input type="number" step='0.01' name="total_accounts" id="total_accounts" required="required">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Term</h5>
+                            <!-- Term -->
+                            <select name="term" id="term" required="required">
+                                <option value='36 months'>36 months</option>
+                                <option value='60 months'>60 months</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Longest_Credit_Length</h5>
+                            <!-- Longest_Credit_Length-->
+                            <input type="number" step='0.01'  name="longest_credit_length" id="longest_credit_length" required="required">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <br>
+
+            </div>
+
+
+            <br>
+            <br>
+            <br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+        <p>©2021 LORENC ZHUKA</p>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
