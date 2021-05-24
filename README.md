@@ -49,13 +49,15 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in a csv file.
+* In Cross Validation Scores we expect higher accuracy than in test score because there is some data leakage during feature engineering.
 
 
-| Model Name             | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
-|:-------------------- -:|:------------------------:|:---------------------------:|:----------------------:|:----------------------:|:--------------------------:|:---------------------:|
-|XGBoost with scale_pos_weight  |     0.7891               |     0.7833                  |         0.7800         |      0.7891            |           0.7833           |     0.7800             |
-|Random Forest      |     0.8794               |     0.9700                  |         0.8758         |      0.8793            |           0.7833           |     0.8792            |
-|KNN                |     0.8514               |     0.8861                  |         0.8105         |      0.8504            |           0.9824           |  0.8248              |
+| Model Name                    | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
+|:-----------------------------:|:------------------------:|:---------------------------:|:----------------------:|:----------------------:|:--------------------------:|:------------------------:|
+|XGBoost with scale_pos_weight  |     0.6433               |     0.7250                  |         0.6947         |      0.6525            |           0.6647           |     0.7081               |
+|RandomForest with Class Weight |     0.5110               |     1.0                     |         0.6975         |      0.6094            |           0.6961           |     0.7067               |
+|Easy Ensemble                  |     0.6534               |     0.7184                  |         0.7067         |      0.6328            |           0.7011           |  0.7072               |
+|XGBoost SMOTETomek             |     0.5298               |     0.5549                  |         0.6948         |      0.5143            |           0.5173           |  0.7045               |
 
 ## Other Used Techniques
 
