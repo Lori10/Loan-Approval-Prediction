@@ -109,15 +109,57 @@ This is how the web application looks like :
                          ├── data_preprocessing
                              ├── preprocessing.py
                          ├── models
-                             ├── RandomForestRegressor
-                                 ├── RandomForestRegressor.sav
-                         ├── app.py
-                         ├── encoded_features.json
-                         ├── model_infos.csv
-                         ├── multicolleniarity_heatmap.jpg
-                         ├── nan_values.csv
-                         ├── Training Infos.ipynb
-                         ├── requirements.txt
+                             ├── EasyEnsembleClassifier
+                                 ├── EasyEnsembleClassifier.sav
+                         
+                         ├── EasyEnsembleClassifier_ConfusionMatrices
+                             ├── DefaultModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── DefaultModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── TunedModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── TunedModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                                                    
+                          ├── RandomForestClassifier_ConfusionMatrices
+                             ├── DefaultModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── DefaultModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── TunedModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                             ├── TunedModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                                      
+                          ├── XGBoostClassifier_ConfusionMatrices
+                              ├── DefaultModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                              ├── DefaultModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                              ├── TunedModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                              ├── TunedModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                                  
+                           ├── XGBoostOverUnderSampling_ConfusionMatrices
+                               ├── DefaultModel_TestData_ConfusionMatrix
+                                   ├── confusion_matrix.jpg
+                               ├── DefaultModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                               ├── TunedModel_TestData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                               ├── TunedModel_TrainingData_ConfusionMatrix
+                                  ├── confusion_matrix.jpg
+                         
+                           ├── app.py
+                           ├── encoded_features.json
+                           ├── model_infos.csv
+                           ├── demo_photo.jpg
+                           ├── dic_state.json
+                           ├── nan_values.csv
+                           ├── Training Infos.ipynb
+                           ├── requirements.txt
 ```
 
 
@@ -128,6 +170,5 @@ If you find a bug (the website couldn't handle the query and / or gave undesired
 
 ## Future Scope
 
-* Use any other approach to handle imbalanced data
-* Try other feature engineering approaches to get a possible higher model performance
+* Use any other approach to handle imbalanced data like BalancedBaggigClassifier, BalancedRandomForestClassifier etc.
 * Optimize Flask app.py Front End
