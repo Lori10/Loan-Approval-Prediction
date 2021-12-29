@@ -4,7 +4,7 @@
   * [Business Problem Statement](#Business-Problem-Statement)
   * [Data](#Data)
   * [Used Libraries and Resources](#Used-Libraries-and-Resources)
-  * [Data Preprocessing](#Data-Cleaning)
+  * [Data Preprocessing](#Data-Preprocessing)
   * [Model Building and Tuning](#Model-Building-and-Tuning)
   * [Other used Techniques](#Other-Used-Techniques)
   * [Demo](#demo)
