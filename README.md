@@ -72,7 +72,7 @@ The interesting part of this project is that the dataset is highly imbalanced. T
 This is how the web application looks like : 
 
 
-![alt text](https://github.com/Lori10/Banglore-House-Price-Prediction/blob/master/Project%20Code%20Pycharm/demo_image.jpg "Image")
+![alt text](https://github.com/Lori10/Loan-Approval-Prediction/blob/main/PyCharm%20Code%20Project/demo_photo.jpg "Image")
 
 
 
