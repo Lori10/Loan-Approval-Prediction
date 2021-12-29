@@ -4,7 +4,7 @@
   * [Business Problem Statement](#Business-Problem-Statement)
   * [Data](#Data)
   * [Used Libraries and Resources](#Used-Libraries-and-Resources)
-  * [Data Cleaning](#Data-Cleaning)
+  * [Data Preprocessing](#Data-Cleaning)
   * [Model Building and Tuning](#Model-Building-and-Tuning)
   * [Other used Techniques](#Other-Used-Techniques)
   * [Demo](#demo)
@@ -20,8 +20,6 @@ With the enhancement in the banking sector lots of people are applying for bank 
 ## Data
 Data Source : Private Data Source
 
-Dataset is imbalanced (81%-19%)
-
 ## Used Libraries and Resources
 **Python Version** : 3.6
 
@@ -30,14 +28,14 @@ Dataset is imbalanced (81%-19%)
 **References** : https://towardsdatascience.com/, https://machinelearningmastery.com/
 
 
-## Data Cleaning
-The interesting part of this project is that the dataset is highly imbalanced. To prepare the data for training I have performed these feature engineering steps :
+## Data Preprocessing
+The interesting part of this project is that the dataset is highly imbalanced (81%-19%). To prepare the data for training I have performed these feature engineering steps :
 
-* Split data into training and test before any data preprocessing approach in order to avoid data leakage. 
+* Split data into training and test before any data preprocessing approach in order to avoid data leakage (overfitting). 
 * Remove columns that are not relevant for prediction like Row ID.
 * Removed some unwanted / strange values like 'NONE' and 'ANY' in column Home_Ownership.
 * Dropped records with missing values since the percentage of missing values in features is very low.
-* Used One-Hot encoding technique te encode nominal categorical features with low amount of categories. For features with high amount of categories like 'State' I used mean encoding approach.
+* Used One-Hot encoding technique te encode nominal categorical features with low amount of categories. For features with high amount of categories like 'State' I used mean encoding approach because using One-Hoe encoding would lead to a very huge amount of columns in our dataset. 
 * Feature Selection is done using Recursive Elemination with Cross Validation. Using this approach best features for prediction will be selected automatically.
 
 
