@@ -45,7 +45,7 @@ The interesting part of this project is that the dataset is highly imbalanced (8
 * Evaluated the models using AUC Score and confusion matrix because of the imbalanced data. The performance metric used to select the best model is AUC Score.
 * When tuning the models using Cross Validation, I used sklearn pipeline including over-undersampling and hyperparameter tuning in order to avoid data leakage. This means that each fold of Cross Validation is resampled, model is trained using training set and then tested on test set which is not resampled.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
-* I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
+* I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model's performance. The best model is selected using the test score.
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in a csv file.
 * In Cross Validation Scores we expect higher accuracy than in test score because there is some data leakage during feature engineering.
 * It seems like using SMOTETomek does not give good results in this case. Test score is improved after tuning XGBoost with scale_pos_weight and RandomForest with class_weight. EasyEnsembleClassifier gives similar performance after tuning. The best model that I got after tuning is XGBoost with scale_pos_weight.
