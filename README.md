@@ -1,6 +1,6 @@
 # Loan Approval Prediction
 
-Note : The folder "PyCharm Code Project" includes the full project version in Pycharm using object oriented and the web app while the folder "Jupyter Notebook" includes the project version without object oriented and the web app in Jupyter Notebook. For the Exploratory Data Analysis there is a separate file called EDA.ipynb
+Note : The folder "PyCharm Code Project" includes the full project version in Pycharm using object oriented and the web app while the folder "Jupyter Notebook" includes the project version without object oriented and the web app in Jupyter Notebook. For the Exploratory Data Analysis there is a separate file called EDA.ipynb in the "Jupyter Notebook" folder.
 
 ## Table of Content
   * [Business Problem Statement](#Business-Problem-Statement)
