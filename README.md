@@ -12,7 +12,7 @@ Note : The folder "PyCharm Code Project" includes the full project version in Py
   * [Demo](#demo)
   * [Run project in your local machine](#Run-the-project-in-your-local-machine)
   * [Directory Tree](#directory-tree)
-  * [Bug / Feature Request](#Bug---Feature-Request)
+  * [Bug and Feature Request](#Bug-and-Feature-Request)
   * [Future scope of project](#future-scope)
 
 
@@ -167,7 +167,7 @@ This is how the web application looks like :
 
 
 
-## Bug / Feature request
+## Bug and Feature Request
 
 If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an [issue](https://github.com/Lori10/Loan-Approval-Prediction/issues) here by including your search query and the expected result
 
