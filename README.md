@@ -7,7 +7,7 @@
   * [Used Libraries and Resources](#Used-Libraries-and-Resources)
   * [Data Preprocessing](#Data-Preprocessing)
   * [Model Building and Tuning](#Model-Building-and-Tuning)
-  * [Other used Techniques](#Other-Used-Techniques)
+  * [Techniques for handling imbalanced data](#Techniques-for-handling-imbalanced-data)
   * [Demo](#demo)
   * [Run project in your local machine](#Run-the-project-in-your-local-machine)
   * [Directory Tree](#directory-tree)
@@ -38,20 +38,18 @@ Data Source : Privat Source.
 
 ## Model Building and Tuning
 
-* The ML Estimators I trained are : Linear Regression, Random Forest and KNN.
-* Evaluated the models using R Squared, Adjusted R Squared, Mean Absolute Error, Mean Squared Error, Root Mean Squared Error. The performance metric used to select the best model is Adjusted R Squared.
+* The ML Models I trained are : XGBoost, Random Forest, Easy Ensemble Classifier.
+* The performance metric used to select the best model is AUC Score since we have imbalanced data (accuracy is not a good choice).
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
-* I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
-* The best model I got from optimization is Random Forest with a test score of 0.879
-* Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in Training Infos.csv file.
-score of RandomForest and KNN. But since the training score of KNN after tuning is around 98.2% it may overfit.
+* Sklearn Pipelines are used during cross validation to only upsample/downsample each training fold (not the test fold) in order to avoid data leakage.
+* I evaluated each ML model using training score, cross validation mean score, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * The best model I got from model tuning is Random Forest with a score of .8793.
 
 | Model Name        | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
 |:-----------------:|:------------------------:|:---------------------------:|:----------------------:|:----------------------:|:--------------------------:|:---------------------:|
-|Linear Regression  |     0.7891               |     0.7833                  |         0.7800         |      0.7891            |           0.7833           |     0.7800             |
-|Random Forest      |     0.8794               |     0.9700                  |         0.8758         |      0.8793            |           0.7833           |     0.8792            |
-|KNN                |     0.8514               |     0.8861                  |         0.8105         |      0.8504            |           0.9824           |  0.8248              |
+|XGBoost            |     0.64                 |     0.72                    |         0.69           |      0.65              |              0.66          |     0.70          |
+|Random Forest      |     0.51                 |      1.0                    |         0.70           |      0.61              |           0.69             |     0.71           
+|EasyEnsemble       |     0.65                 |     0.72                    |         0.71           |      0.63              |           0.70             |  0.71              |
 
 
 ## Other Used Techniques
