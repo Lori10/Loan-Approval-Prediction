@@ -8,6 +8,7 @@
   * [Data Preprocessing](#Data-Preprocessing)
   * [Model Building and Tuning](#Model-Building-and-Tuning)
   * [Techniques for handling imbalanced data](#Techniques-for-handling-imbalanced-data)
+  * [Other used techniques](#Other-used-techniques)
   * [Demo](#demo)
   * [Run project in your local machine](#Run-the-project-in-your-local-machine)
   * [Directory Tree](#directory-tree)
@@ -52,8 +53,14 @@ Data Source : Privat Source.
 |EasyEnsemble       |     0.65                 |     0.72                    |         0.71           |      0.63              |           0.70             |  0.71              |
 
 
-## Techniques for handling imbalanced-dat
+## Techniques for handling imbalanced-data
 
+* Tuning XGBoost including scale_pos_weight parameter which handles imbalanced data.
+* Tuning Random Forest including class_weight parameter. It penalizes the cost function (which we want to minimize) higher when the model missclassifies data from the minority class.
+* Tuning EasyEnsemble which is a bag of balanced boosted learners. This classifier is an ensemble of AdaBoost learners trained on different balanced bootstrap samples. The balancing is achieved by random under-sampling.
+* Resample the dataset using SMOTEtomek which is a combination of oversampling and undesampling and tuning XGBoost.
+
+## Other-used-techniques
 * Object oriented programming is used to build this project in order to create modular and flexible code.
 * Built a client facing API (web application) using Flask.
 * A retraining approach is implemented using Flask framework.
