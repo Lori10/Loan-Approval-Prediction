@@ -56,11 +56,11 @@ Data Source : Privat Source.
 ## Techniques for handling imbalanced-data
 
 * Tuning XGBoost including scale_pos_weight parameter which handles imbalanced data.
-* Tuning Random Forest including class_weight parameter. It penalizes the cost function (which we want to minimize) higher when the model missclassifies data from the minority class.
+* Tuning Random Forest including class_weight parameter. Using class_weight we can assign weights to the minority and majority class. Higher weight for minority class means that the error (in the cost function) when missclassifying data from the minority class will be higher.
 * Tuning EasyEnsemble which is a bag of balanced boosted learners. This classifier is an ensemble of AdaBoost learners trained on different balanced bootstrap samples. The balancing is achieved by random under-sampling.
 * Resample the dataset using SMOTEtomek which is a combination of oversampling and undesampling and tuning XGBoost.
 
-## Other-used-techniques
+## Other used techniques
 * Object oriented programming is used to build this project in order to create modular and flexible code.
 * Built a client facing API (web application) using Flask.
 * A retraining approach is implemented using Flask framework.
