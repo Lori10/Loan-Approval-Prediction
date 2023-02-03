@@ -111,12 +111,8 @@ This is how the web application looks like :
                          ├── data_preprocessing
                              ├── preprocessing.py
                          ├── models
-                             ├── RandomForestRegressor
-                                 ├── RandomForestRegressor.sav
                          ├── app.py
-                         ├── encoded_features.json
                          ├── model_infos.csv
-                         ├── multicolleniarity_heatmap.jpg
                          ├── nan_values.csv
                          ├── Training Infos.ipynb
                          ├── requirements.txt
