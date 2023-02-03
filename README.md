@@ -44,7 +44,7 @@ Data Source : Privat Source.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * Sklearn Pipelines are used during cross validation to only upsample/downsample each training fold (not the test fold) in order to avoid data leakage.
 * I evaluated each ML model using training score, cross validation mean score, test score to get a better understanding about the model performances. The best model is selected using the test score.
-* The best model I got from model tuning is Random Forest with a score of .8793.
+* The best model I got from model tuning is XGBoost with an AUC score of 0.65.
 
 | Model Name        | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
 |:-----------------:|:------------------------:|:---------------------------:|:----------------------:|:----------------------:|:--------------------------:|:---------------------:|
