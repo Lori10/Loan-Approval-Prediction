@@ -16,52 +16,35 @@
 
 
 ## Business Problem Statement
-In this repo I have build an end to end machine learning project which predicts if the loan application will get approved or not based on informations like financial information, requested loan amount etc. 
+This project consists of predicting using different machine learning models if the loan application will get approved or not based on informations like financial information, requested loan amount etc using a highly imbalanced dataset of more than 100000 records
 
 ## Data
-Data Source : Kaggle.
-
-Link : https://www.kaggle.com/amitabhajoy/bengaluru-house-price-data
+Data Source : Privat Source.
 
 ## Used Libraries and Resources
 **Python Version** : 3.6
 
-**Libraries** : sklearn, pandas, numpy, matplotlib, seaborn, flask, json, pickle
+**Libraries** : sklearn, pandas, numpy, matplotlib, seaborn, flask, json
 
 **References** : https://towardsdatascience.com/, https://machinelearningmastery.com/
 
 
 ## Data Preprocessing
-The interesting thing of this project is that the data is really dirty and has many outliers. So it needs a lot of feature engineering to prepare for a machine learning model. I made the following changes :
 
 * Based on domain knowledge I removed columns which are not relevant for prediction.
-* Removed the missing values in columns where the percentage of missing values was very small while in other columns I labeled them with the string 'Missing'.
-* Categorical features with only few different categories are encoded using one-hot encoding technique while for features with huge amount of categories are considered only the top 20 most frequent categories. The other ones are labeled with 'other' are then one-hot encoding is applied to encode them into numerical features.
-* Some features like number of bedrooms have object datatype so I converted them into float numbers.
-* Total_sqft feature which shows the total square foot of a house is measured in different units like Sq. Yards, Sq. Meter, Acres, Guntha, Cents and have different datatypes like float, integer, string etc. All this values are converted into float number and the same unit which is square foot.
-* Outlier Removal 1: Business manager (who has expertise in real estate), told me that the minimal square ft per bedroom is 300 (i.e. 2 bhk apartment is minimum 600 sqft. So based on business logic I removed all houses where sqft per 1 bedroom is less then 300.
-* Outlier Removal 2: Based on business logic I removed all houses where price per sqft per location is greater than mean + 1 std and less than mean - 1 std.
-* Outlier Removal 3: Based on business logic I removed all houses where total price of x+1 BHK is greater than prices of houses with x BHK for same total sqft.
-* Outlier Removal 4: Based on business logic I removed all houses where nr of bathrooms is greater than 2 + nr of bedroom.
-* Since one of the ML estimators I trained is Linear Regression which assumes that the features are normally distributed, I applied some Gaussian transformation techniques on some features to convert them into normally distributed features.
-* Features with variance=0 (constant features) are dropped since they do not give any useful information about the target variable.
-* Since one of the ML estimators I trained is Linear Regression I handled multicolleniarity by dropping independent features (redundant features) that are highly correlated with each other.
-* Feature scaling using StandardScaler is performed since Linear Regression works well when the features are scaled.
-* Feature Selection using SelectKBest is performed in order to only select the k best features.
-* Feature Selection and Feature Scaling is performed together with the hyperparameter tuning using sklearn pipelines in order to avoid data leakage (overfitting).
-
+* Handling missing and unwanted/strange values in the features. 
+* Encoding categorical features.
+* Feature Selection using Recursive Elemination with cross validation.
 
 ## Model Building and Tuning
 
 * The ML Estimators I trained are : Linear Regression, Random Forest and KNN.
 * Evaluated the models using R Squared, Adjusted R Squared, Mean Absolute Error, Mean Squared Error, Root Mean Squared Error. The performance metric used to select the best model is Adjusted R Squared.
-* When tuning the model using Cross Validation, I used sklearn pipeline including feature selection, feature scaling and hyperparameter tuning in order to avoid data leakage. So I tuned the nr of features and different hyperparameters in each fold of cross validation.
 * Hyperparameter Tuning  is done using RandomizedSearchCV.
 * I evaluated each ML model using training score, cross validation mean score, cross validation scores, test score to get a better understanding about the model performances. The best model is selected using the test score.
 * The best model I got from optimization is Random Forest with a test score of 0.879
 * Every information about different performance metrics of default (model with default hyperparameters) and tuned models training is stored in Training Infos.csv file.
-* In Cross Validation Scores we expect higher accuracy than in test score because there is some data leakage during feature engineering.
-* In LinearRegression we do not expect any model improvement since there is no need to tune LinearRegression model. There is small increase in the cross validation score of RandomForest and KNN. But since the training score of KNN after tuning is around 98.2% it may overfit.
+score of RandomForest and KNN. But since the training score of KNN after tuning is around 98.2% it may overfit.
 * The best model I got from model tuning is Random Forest with a score of .8793.
 
 | Model Name        | Deafult Model Test Score |Default Model Training Score | Default Model CV Score | Tuned Model Test Score | Tuned Model Training Score | Tuned Model CV Score | 
