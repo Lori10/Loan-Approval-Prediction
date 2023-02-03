@@ -71,7 +71,7 @@ Data Source : Privat Source.
 This is how the web application looks like : 
 
 
-![alt text](https://github.com/Lori10/Banglore-House-Price-Prediction/blob/master/demo_photo.jpg "Image")
+![alt text](https://github.com/Lori10/Loan-Approval-Prediction/blob/main/demo_photo.jpg "Image")
 
 
 
