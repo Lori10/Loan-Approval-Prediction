@@ -52,7 +52,7 @@ Data Source : Privat Source.
 |EasyEnsemble       |     0.65                 |     0.72                    |         0.71           |      0.63              |           0.70             |  0.71              |
 
 
-## Other Used Techniques
+## Techniques for handling imbalanced-dat
 
 * Object oriented programming is used to build this project in order to create modular and flexible code.
 * Built a client facing API (web application) using Flask.
